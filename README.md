@@ -1,51 +1,24 @@
-[ ![Download](https://api.bintray.com/packages/bgogetap/android/StickyHeaders/images/download.svg) ](https://bintray.com/bgogetap/android/StickyHeaders/_latestVersion) [![Build Status](https://travis-ci.org/bgogetap/StickyHeaders.svg?branch=tests)](https://travis-ci.org/bgogetap/StickyHeaders)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StickyHeaders-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3922)
-# StickyHeaders
-Easily add Sticky Headers to your RecyclerView
+# EpoxyStickyHeaders
+Easily add Sticky Headers to your Epoxy view. This is currently just a fork of [StickyHeaders](https://github.com/bgogetap/StickyHeaders). Work on this library will be published here when ready. The goal is to supply Epoxy with a LayoutManager in order to add sticky headers.
 
-### Setup
-Implement `StickyHeaderHandler` in your Presenter/Adapter/Activity or whatever class has access to your RecyclerView adapter dataset
+EpoxyStickyHeaders License
+-------
 
-Make sure the parent of the RecyclerView is a FrameLayout or CoordinatorLayout (this will be verified at Runtime)
+    Copyright 2019 DJ Rausch
 
-Instantiate a `StickyLayoutManager` and set that as the LayoutManager for your RecyclerView.
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-For items in your dataset that you want to act as sticky headers, implement the marker interface `StickyHeader`.
+       http://www.apache.org/licenses/LICENSE-2.0
 
-That's it! See the example app for more in depth details.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
-#### Additional Features
-Add elevation to your headers (animated in and out) on Lollipop and above:
-
-`layoutManager.elevateHeaders(true)` OR `layoutManager.setElevation(int dp)`
-
-Add a listener to be notified when headers are attached/re-bound or detached:
-
-`StickyLayoutManager#setStickyHeaderListener`
-
-You will be passed the instance of the view that was either attached/re-bound or detached, as well as the adapter position of the data that view represents. It is important to note that the adapter position passed to `headerDetached` may not be the current position in the data set that the view was originally bound with. This can happen if the data has changed since that header was made sticky.
-
-The adapter position passed in `headerAttached` will always be correct at that moment.
-
-![StickyHeaders](art/demo-padding.gif)
-
-Add to your Gradle dependencies (Check badge at top for latest version):
-
-*Note: Adding `-androidx` to the version will use AndroidX versions of classes (i.e. RecyclerView)*
-
-```groovy
-buildscript {
-    repositories {
-        jcenter()
-    }
-}
-
-dependencies {
-    compile 'com.brandongogetap:stickyheaders:x.y.z'
-}
-```
-
-License
+StickyHeaders License
 -------
 
     Copyright 2016 Brandon Gogetap
